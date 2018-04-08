@@ -42,14 +42,6 @@ RUN echo export APACHE_RUN_USER=docker >> /etc/apache2/envvars
 RUN echo export APACHE_RUN_GROUP=staff >> /etc/apache2/envvars
 
 RUN cp /var/www/html/docker/000-default.conf /etc/apache2/sites-enabled/000-default.conf
-
-#SSL
-RUN mkdir -p /var/lib/snipeit/ssl
-RUN cp /var/www/html/docker/001-default-ssl.conf /etc/apache2/sites-enabled/001-default-ssl.conf
-
-RUN a2enmod ssl
-#RUN a2ensite 001-default-ssl.conf
-
 RUN a2enmod rewrite
 
 ############ INITIAL APPLICATION SETUP #####################
