@@ -92,18 +92,5 @@ USER root
 
 VOLUME ["/var/lib/snipeit"]
 
-##### START SERVER
-
-RUN cp /var/www/html/docker/entrypoint.sh /entrypoint.sh
-RUN chmod +x /entrypoint.sh
-
-# Add Tini
-ENV TINI_VERSION v0.14.0
-ADD https://github.com/krallin/tini/releases/download/${TINI_VERSION}/tini /tini
-RUN chmod +x /tini
-ENTRYPOINT ["/tini", "--"]
-
-CMD ["/entrypoint.sh"]
-
 EXPOSE 80
 EXPOSE 443
