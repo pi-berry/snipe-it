@@ -61,7 +61,7 @@ WORKDIR /var/www/html
 
 #all configuration files
 # COPY docker/*.php /var/www/html/app/config/production/
-RUN /var/www/html/docker/docker.env /var/www/html/.env
+RUN cp /var/www/html/docker/docker.env /var/www/html/.env
 RUN chown -R docker /var/www/html
 
 RUN \
