@@ -95,4 +95,4 @@ VOLUME ["/var/lib/snipeit"]
 EXPOSE 80
 EXPOSE 443
 
-CMD ["/bin/bash"]
+CMD ["/bin/ping","localhost"]
