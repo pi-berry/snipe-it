@@ -87,6 +87,6 @@ VOLUME ["/var/lib/snipeit"]
 EXPOSE 80
 
 ##### START SERVER
-COPY /var/www/html/docker/entrypoint.sh /entrypoint.sh
+RUN cp /var/www/html/docker/entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
 CMD ["/entrypoint.sh"]
