@@ -86,4 +86,4 @@ VOLUME ["/var/lib/snipeit"]
 
 EXPOSE 80
 
-CMD ["apache2ctl", "start"]
+CMD ["apache2ctl", "start", "-D FOREGROUND"]
