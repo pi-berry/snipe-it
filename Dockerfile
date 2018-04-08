@@ -26,7 +26,7 @@ WORKDIR /var/www/html
 RUN git init && \
 git remote add origin https://github.com/snipe/snipe-it.git && \
 git fetch origin && \
-git checkout -b master --track origin/master
+git checkout -b master
 
 RUN phpenmod mcrypt
 RUN phpenmod gd
