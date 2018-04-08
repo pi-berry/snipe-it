@@ -90,4 +90,3 @@ EXPOSE 80
 COPY /var/www/html/docker/entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
 CMD ["/entrypoint.sh"]
-CMD /usr/sbin/apache2ctl -D FOREGROUND
