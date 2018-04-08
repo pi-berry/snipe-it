@@ -86,5 +86,4 @@ VOLUME ["/var/lib/snipeit"]
 
 EXPOSE 80
 
-# By default start up apache in the foreground, override with /bin/bash for interative.
-CMD ["apache2ctl"]
+CMD ["apache2ctl", "start"]
