@@ -86,4 +86,7 @@ VOLUME ["/var/lib/snipeit"]
 
 EXPOSE 80
 
-ENTRYPOINT ["apache2ctl", "start"]
+##### START SERVER
+COPY docker/entrypoint.sh /entrypoint.sh
+RUN chmod +x /entrypoint.sh
+CMD ["/entrypoint.sh"]
