@@ -88,4 +88,4 @@ EXPOSE 80
 
 # By default start up apache in the foreground, override with /bin/bash for interative.
 RUN service apache2 restart
-CMD ["php", "-a"]
+CMD ["ping", "localhost"] # keep docker image alive -- otherwise docker container is done and will be closed.
