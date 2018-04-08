@@ -1,8 +1,7 @@
 FROM resin/rpi-raspbian:stretch
 MAINTAINER Johannes Alt <altjohannes510@gmail.com>
 
-RUN add-apt-repository "http://raspbian.raspberrypi.org/raspbian/ stretch main contrib non-free rpi" && \
-apt-get update && \
+RUN apt-get update && \
 apt-get install -y \
 apache2 \
 apache2-bin \
