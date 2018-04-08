@@ -1,7 +1,9 @@
-FROM resin/rpi-raspbian:jessie
+FROM resin/rpi-raspbian:stretch
 MAINTAINER Johannes Alt <altjohannes510@gmail.com>
 
-RUN apt-get update && apt-get dist-upgrade && apt-get update && apt-get install -y \
+RUN add-apt-repository "http://raspbian.raspberrypi.org/raspbian/ stretch main contrib non-free rpi" && \
+apt-get update && \
+apt-get install -y \
 apache2 \
 apache2-bin \
 libapache2-mod-php \
