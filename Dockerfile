@@ -23,11 +23,11 @@ git \
 && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 WORKDIR /var/www/html
-RUN git init && \
+RUN rm index.html && \
+git init && \
 git remote add origin https://github.com/snipe/snipe-it.git && \
 git fetch origin && \
-git checkout -b master && \
-ls
+git checkout -b master origin/master
 
 RUN phpenmod mcrypt
 RUN phpenmod gd
