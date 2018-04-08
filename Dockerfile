@@ -2,32 +2,32 @@ FROM resin/rpi-raspbian:stretch
 MAINTAINER Johannes Alt <altjohannes510@gmail.com>
 
 RUN apt-get update && \
-apt-get install -y \
-apache2 \
-apache2-bin \
-libapache2-mod-php \
-php-curl \
-php-ldap \
-php-mysql \
-php-mcrypt \
-php-gd \
-php-xml \
-php-mbstring \
-php-zip \
-php-bcmath \
-patch \
-curl \
-vim \
-git \
-&& apt-get clean \
-&& rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+	apt-get install -y \
+	apache2 \
+	apache2-bin \
+	libapache2-mod-php \
+	php-curl \
+	php-ldap \
+	php-mysql \
+	php-mcrypt \
+	php-gd \
+	php-xml \
+	php-mbstring \
+	php-zip \
+	php-bcmath \
+	patch \
+	curl \
+	vim \
+	git \
+	&& apt-get clean \
+	&& rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 WORKDIR /var/www/html
 RUN rm index.html && \
-git init && \
-git remote add origin https://github.com/snipe/snipe-it.git && \
-git fetch origin && \
-git checkout -b master origin/master
+	git init && \
+	git remote add origin https://github.com/snipe/snipe-it.git && \
+	git fetch origin && \
+	git checkout -b master origin/master
 
 RUN phpenmod mcrypt
 RUN phpenmod gd
@@ -94,3 +94,5 @@ VOLUME ["/var/lib/snipeit"]
 
 EXPOSE 80
 EXPOSE 443
+
+CMD ["/bin/bash"]
