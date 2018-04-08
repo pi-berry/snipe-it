@@ -85,7 +85,6 @@ USER root
 VOLUME ["/var/lib/snipeit"]
 
 EXPOSE 80
-EXPOSE 443
 
 # By default start up apache in the foreground, override with /bin/bash for interative.
-CMD /usr/sbin/apache2ctl -D FOREGROUND
+CMD /usr/sbin/apache2ctl start
